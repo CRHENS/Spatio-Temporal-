@@ -2,7 +2,7 @@ function[ystart1]=unperturb_R_2(yinit,timestep,w)
 max_diff_steady_state=1;
 %%%%%%%% Without perturbation %%%%%%%
  op=odeset('Abstol',1e-12,'Reltol',1e-12);
-    fprintf('timetaken=%d',timestep)
+  %  fprintf('timetaken=%d',timestep)
     k=1;
     z1=[];   tt=0.0;
 while(max_diff_steady_state>10^-10)
