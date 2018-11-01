@@ -36,9 +36,13 @@ Switch_integration(model_type);
 %delete A.mat;
 
 %%%% For plotting the data%%%%%
-
+mystring3 = ['What model you have chosen ? \n'...
+            '1 - R_1 or N \n','2 - R_2\n','3 - P\n'...
+            '4- M or E\n'];   
+model_type=input(mystring3);
+Switch_plot(model_type);
 %%%%%  Dynamics: R_1 and N %%%%%%%%%%%%%
-Blue_P_T_vsT_Tau_vs_S_TvsL_TvsUniv_dist
+%%Blue_P_T_vsT_Tau_vs_S_TvsL_TvsUniv_dist
 %%%%% Dynamics: R_2 %%%%%%%%%%%%
 %%%Red_R2_P_T_vsT_Tau_vs_S_TvsL_TvsUniv_dist
 %%%%% Dynamics: P %%%%%%%%%%%%
