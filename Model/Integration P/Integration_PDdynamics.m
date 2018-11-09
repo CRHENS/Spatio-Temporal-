@@ -1,6 +1,9 @@
+% Copyrigth to Chittaranjan Hens, Uzi Harush and Baruch's lab
+
 clear all
  par_1=[0.2]; 
  par_2=[0.5];
+ tic
 for i=1
 global R B  F b1 a1 w A
 load A.mat;   %%%% Network 
@@ -13,8 +16,6 @@ Nosc=m1*n1;
 w=ones(1,m1*n1);
  R=1;B=1; F=0; 
                transienttime=[];  node_dist_perb=[];  deg_perb=[]; perturb_value=[];
-% dt_pert1=[]; ystart1=[]; A=[]; N=[];dist_path=[];  deg=[];
-% w=[];
 
     a1=par_1(i);
     b1=par_2(i);
@@ -49,16 +50,14 @@ Create_Sys_PD(3,m1,n1,A);
 %%%%%%%%%%%%%%%%% Transient time %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 eta=0.7;
  [nn]=transient_measure(dt_pert1,node_num,A,eta);
- %%[ss]=perturb_measure(dt_pert1,node_num);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%% Transient time along disatnec and degree saved %%%%%%%%%%%%
   node_dist=dist_path(node_num,1:end);
  transienttime=[transienttime;nn];
- %perturb_value=[perturb_value;ss];
  node_dist_perb=[node_dist_perb;node_dist];
  deg_perb=[deg_perb;deg];
-% toc;
+ toc;
  end
  transienttime1=transienttime';
  transienttime_new=transienttime1(1:end);
@@ -68,7 +67,6 @@ eta=0.7;
  deg_perb_new=deg_perb1(1:end);
  xx=[deg_perb_new;  node_dist_perb_new; transienttime_new];
  xx=xx';
- % file_name=sprintf('trans_PD_a_%g_b_%g_N%g.mat',a1,b1,Nosc);
   file_name=sprintf('Degree_Dist_T.mat');
   save(file_name,'xx');
     %clear ;
