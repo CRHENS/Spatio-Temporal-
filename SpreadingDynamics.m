@@ -1,9 +1,8 @@
+% Copyrigth to Chittaranjan Hens, Uzi Harush and Baruch Barzel's lab
 %% add paths
 clear all;
 delete A.mat;
 delete Degree_Dist_T.mat;
-%path(pathdef)
-%restoredefaultpath
 addpath('.\Networks');
 addpath('.\Model');
 addpath('.\Model\Integration R_1');
@@ -27,25 +26,10 @@ mystring1 = ['Which Networks do you want to use? \n'...
 networks=input(mystring1);
 A= Switch_networks(networks);
 save A.mat A;
-%%%addpath('.\SIR');
 mystring2 = ['Which model do you wish to analyze? \n'...
             '1 - R_1\n','2 - R_2\n','3 - N\n'...
             '4- P\n', '5- M\n','6- E\n'];   
 model_type=input(mystring2);
 Switch_integration(model_type);
-%delete A.mat;
 
-%%%% For plotting the data%%%%%
-mystring3 = ['What model you have chosen ? \n'...
-            '1 - R_1 or N \n','2 - R_2\n','3 - P\n'...
-            '4- M or E\n'];   
-model_type=input(mystring3);
 Switch_plot(model_type);
-%%%%%  Dynamics: R_1 and N %%%%%%%%%%%%%
-%%Blue_P_T_vsT_Tau_vs_S_TvsL_TvsUniv_dist
-%%%%% Dynamics: R_2 %%%%%%%%%%%%
-%%%Red_R2_P_T_vsT_Tau_vs_S_TvsL_TvsUniv_dist
-%%%%% Dynamics: P %%%%%%%%%%%%
-%%Red_PD_P_T_vsT_Tau_vs_S_TvsL_TvsUniv_dist
-%%%%% Dynamics: M and E %%%%%%%%%%%
-%%Green_P_T_vsT_Tau_vs_S_TvsL_TvsUniv_dist

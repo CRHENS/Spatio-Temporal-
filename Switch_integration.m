@@ -1,3 +1,4 @@
+% Copyrigth to Chittaranjan Hens, Uzi Harush and Baruch Barzel's lab
 function Switch_integration(modeltype)
 switch modeltype
 case 1

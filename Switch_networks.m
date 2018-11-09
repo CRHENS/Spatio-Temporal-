@@ -1,9 +1,5 @@
+% Copyrigth to Chittaranjan Hens, Uzi Harush and Baruch Barzel's lab
 function [A]= Switch_networks(nets)
-%load trans_MM_ER_h_1_alpha1_theta_zero.mat
-%plottype = '1'; 
-% bin_num=400;bin_num_all=800;
-% D=10;% IF Erdos Renyi
-%D=7; % If Scale Free
 switch nets
 case 1
        load('SF');
