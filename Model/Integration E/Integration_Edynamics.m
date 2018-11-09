@@ -1,3 +1,5 @@
+% Copyrigth to Chittaranjan Hens, Uzi Harush and Baruch's lab
+
 %clear all
 global  R B alpha w A
 load A.mat ;
@@ -8,6 +10,7 @@ h1=1;
 w=ones(1,m1*n1);
 dist_path=pathlength(A);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+tic
 Create_E_Equations(3,m1,n1,A);
 deg=sum(A);
 yinit=0.1+1*rand(length(A),1);
@@ -33,7 +36,6 @@ eta=0.7;
 [nn]=transient_measure(dt_pert1,node_num,A,eta);
 [ss]=perturb_measure(dt_pert1,node_num);
 %%%%%%%%%%%%%%%%%  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%deg_eff=(A*ystart1');
 %%%%%% Transient time along disatnec and degree saved %%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% Transient time along disatnec and degree saved %%%%%%%%%%%%
@@ -42,7 +44,7 @@ eta=0.7;
  perturb_value=[perturb_value;ss];
  node_dist_perb=[node_dist_perb;node_dist];
  deg_perb=[deg_perb;deg];
-
+toc;
 %%%%%%%%%%%%%%%%% Transient time along distance %%%%%%%
  end
 
@@ -57,9 +59,7 @@ eta=0.7;
   deg_perb1=deg_perb';
  deg_perb_new=deg_perb1(1:end);
   xx=[deg_perb_new;  node_dist_perb_new; transienttime_new];
-   xx=xx';
-%   file_name=sprintf('Multiphase_trans_SIS.mat');
-%     save(file_name,'xx'); 
+   xx=xx'; 
 file_name=sprintf('Degree_Dist_T.mat');
    save(file_name,'xx');
      transienttime=[];  perturb_value=[];
