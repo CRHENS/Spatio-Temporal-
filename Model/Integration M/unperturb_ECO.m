@@ -6,7 +6,7 @@ max_diff_steady_state=1;
     k=1;
     z1=[];   tt=0.0;
 while(max_diff_steady_state>10^-10)
-         
+         tic
            %for yy=1:k
  [yt_unperb, wy_unperb] = ode45(@M_model,[tt tt+timestep],yinit,op);
  unperb_dat=wy_unperb;

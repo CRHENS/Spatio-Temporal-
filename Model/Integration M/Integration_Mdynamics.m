@@ -1,3 +1,5 @@
+% Copyrigth to Chittaranjan Hens, Uzi Harush and Baruch's lab
+
 %clear all
 global B K D H E w p1 A
 load A.mat; 
@@ -9,10 +11,9 @@ yinit=0.1+0.5*rand(Nosc,1);
   
 w=ones(1,m1*n1);
 B=0.0;
-%K=5; 
+
 K=1; D=1; H=1; E=0; %% according to Baruch
-%  D=5;
-%  E=0.0;H=0.1;
+
  p1=2;
 sv=[];
  %%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -53,8 +54,7 @@ eta=0.7;
  end
  transienttime1=transienttime';
  transienttime_new=transienttime1(1:end);
-% perturb_value1= perturb_value';
- %perturb_value_new = perturb_value1(1:end);
+
  node_dist_perb1=node_dist_perb';
  node_dist_perb_new=node_dist_perb1(1:end);
  deg_perb1=deg_perb';
@@ -63,7 +63,6 @@ eta=0.7;
  xx=xx';
  file_name=sprintf('Degree_Dist_T.mat');
  save(file_name,'xx');
-%  file_name=sprintf('trans_ECO_K_%g_D_%g_H_%g_power_%gN%g_covtime.mat',K,D,H,p1,N);
-%  save(file_name,'xx'); 
+
 
 
